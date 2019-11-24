@@ -17,6 +17,8 @@ Add to the list and items flow into sections.
 - `new constructor(config)` Create a new instance with a config object.
 - `addItem(<any>)` Adds an item to the next section that has space for it.
 - `addItems(Array<any>)` Adds the items to the list by calling `addItem()` for each item in order.
+- `sections` Get all sections in the list.
+- `sectionedItems` Get an array of the items in the list in their section arrays. The returned value looks like this: `Array<Array<any>>`
 
 See the tests (`tests/sectionedList_test.js`) to see how these methods are used.
 
