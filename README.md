@@ -40,7 +40,7 @@ Say you provide the following array of section sizes: `[3, 5, 10]`. As you add i
 
 #### Empty sections
 
-You can even specify empty sections by doing something like this: `[3, 5, 0, 10, 0, 20]`.
+You can even specify empty sections by doing something like this: `[3, 5, 0, 10, 0, 20]`. `0` indicates an empty section.
 
 Why would you do this? Perhaps you're using your sectioned list to display the items of the sections on a web page and want to use the empty sections to display advertisements.
 
