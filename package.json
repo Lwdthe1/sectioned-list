@@ -1,7 +1,7 @@
 {
   "name": "sectioned-list",
-  "version": "1.0.3",
-  "description": "A linked list of arrays with predefined max lengths. Add to the list and items flow into sections.",
+  "version": "1.0.4",
+  "description": "A list of arrays with predefined max lengths. Add to the list and items flow into sections.",
   "main": "index.js",
   "repository": {
     "type": "git",

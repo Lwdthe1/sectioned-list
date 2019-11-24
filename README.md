@@ -14,7 +14,6 @@ Add to the list and items flow into sections.
 
 ![Sectioned-List Github Social Media Image](https://user-images.githubusercontent.com/5778798/69490311-9e99e800-0e3a-11ea-9d0d-78e5ff806007.png)
 
-
 # Usage
 
 - `new constructor(config)` Create a new instance with a config object.
@@ -27,7 +26,9 @@ Add to the list and items flow into sections.
 
 - `sectionedItems` Get an array of the items in the list in their section arrays. The returned value looks like this: `Array<Array<any>>`
 
-See the tests (`tests/sectionedList_test.js`) to see how these methods are used.
+- `addSectionSize` Add a section size specification to the list. There is no way to remove a section size specification.
+
+There may be other public fields you can access, but they are not necessary, so we've omitted them here. See the tests (`tests/sectionedList_test.js`) to see how these methods are used.
 
 ## config object
 
