@@ -1,4 +1,4 @@
-A linked list of arrays with predefined max lengths.
+A list of arrays with predefined max lengths.
 
 Add to the list and items flow into sections.
 
