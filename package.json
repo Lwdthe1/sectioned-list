@@ -1,24 +1,27 @@
 {
-  "name": "array-datastore",
+  "name": "sectioned-list",
   "version": "1.1.2",
-  "description": "A datastore to store unique objects in an array.",
+  "description": "A linked list of arrays with predefined max lengths. Add to the list and items flow into sections.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lwdthe1/array-datastore.git"
+    "url": "git+https://github.com/Lwdthe1/sectioned-list.git"
   },
   "keywords": [
-    "array datastore",
-    "array",
-    "datastore",
-    "data store"
+    "sectioned list",
+    "section list",
+    "sectional list",
+    "lists",
+    "list",
+    "sections",
+    "list sections"
   ],
   "author": "Lincoln W Daniel <lwdthe1@gmail.com> (http://lincolnwdaniel.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Lwdthe1/array-datastore/issues"
+    "url": "https://github.com/Lwdthe1/sectioned-list/issues"
   },
-  "homepage": "https://github.com/Lwdthe1/array-datastore#readme",
+  "homepage": "https://github.com/Lwdthe1/sectioned-list#readme",
   "scripts": {
     "test": "NODE_ENV=test mocha --recursive -t 3600000 --exit",
     "format": "prettier **/**/*.{ts,js} --write --config .prettierrc"

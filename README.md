@@ -1,6 +1,6 @@
-A datastore to easily and consistently store unique objects in an array.
+A linked list of arrays with predefined max lengths.
 
-You can also specify placeholders for displaying shimmers while awaiting data from an API call.
+Add to the list and items flow into sections.
 
 - [Install](#install)
 - [Usage](#usage)
@@ -10,45 +10,51 @@ You can also specify placeholders for displaying shimmers while awaiting data fr
 
 # Install
 
-`npm install --save array-datastore`
+`npm install --save sectioned-list`
 
 # Usage
 
-- `constructor.instance(configObject)` Create a new instance of the store with an optional configuration object.
-- `addUniqueObject()` Add an unique object to the store. Objects are unique by their `id` field, so ensure your objects have that.
-- `addUniqueObjects()` Add an array unique objects to the store.
-- `prependUniqueObject()` Add an unique object to front of the store.
-- `prependUniqueObjects()` Add an array unique objects to front of the store.
-- `setBeforeAddProcessor(callbackFunction)` Set a function that will be called before any time an object is added to the store.
+- `new constructor(config)` Create a new instance with a config object.
+- `addItem(<any>)` Adds an item to the next section that has space for it.
+- `addItems(Array<any>)` Adds the items to the list by calling `addItem()` for each item in order.
 
-- `hasObjectById()` Check if the store has an object by its id.
-- `replaceObject()` Replace an existing object or add to the store.
-- `deleteObjectById()` Delete an object from the store by its id.
-- `reset()` Delete all objects from the store.
-
-- `getObjects()` Get all the objects in the store.
-- `getObjectIds()` Get all the object ids in the store.
-- `getObjectById()` Get an object from the store by its id.
-- `getObjectAtIndex()` Get an object from the store at a specific index.
-- `getObjectByPredicate()`Get the first object matching the provided filter predicate.
-- `getObjectIndexById()` Get the index of an object by its id.
-
-- `hasPlaceholders()` Checks if the store has placeholder objects.
-- `clearPlaceholders()` Remove the placeholder objects from the store.
-
-See the tests (`tests/dataStore_test.js`) to see how these methods are used.
+See the tests (`tests/sectionedList_test.js`) to see how these methods are used.
 
 ## config object
 
-When creating the store, you can specify an optional configuration object.
+When creating an instance, you can specify an optional configuration object with the following fields:
 
-### placeholders: `number|Array<Object>`
+- `sectionSizes`
 
-You can specify a number of placeholders or an array of placeholder objects that will populate the store until you add your first actual object or you call the #clearPlaceholders() method.
+### sectionSizes: `Array<Number>`
 
-## Example
+You can specify an array of numbers to define the max size of your sections. If you don't specify this, it will default to `[10]`, which will give all your sections a max size of 10.
 
-![carbon (4)](https://user-images.githubusercontent.com/5778798/68904124-fd9c8600-06f1-11ea-9d33-33a9f8613121.png)
+Say you provide the following array of section sizes: `[3, 5, 10]`. As you add items to the list, it will first create a section with the first 3 items, then another section with the next 5 items, and subsequent items will create subsequent sections of max-10 items. So, if you have 34 items to add to your sectioned list, the sections would look like this:
+
+- 3 items
+- 5 items
+- 10 items
+- 10 items
+- 6 items
+
+#### Empty sections
+
+You can even specify empty sections by doing something like this: `[3, 5, 0, 10, 0, 20]`.
+
+Why would you do this? Perhaps you're using your sectioned list to display the items of the sections on a web page and want to use the empty sections to display advertisements.
+
+So if you specify `[3, 5, 0, 10, 0, 20]` for your section sizes and use the empty sections to show advertisements, the web page would look something like this with 55 items:
+
+- 3 items
+- 5 items
+- An advertisement
+- 10 items
+- Another advertisement
+- 20 items
+- 17 items
+
+Note that if your last section size is empty, any subsequent sections will default to a max size of 10.
 
 ## Tests
 
