@@ -32,11 +32,13 @@ You can specify an array of numbers to define the max size of your sections. If 
 
 Say you provide the following array of section sizes: `[3, 5, 10]`. As you add items to the list, it will first create a section with the first 3 items, then another section with the next 5 items, and subsequent items will create subsequent sections of max-10 items. So, if you have 34 items to add to your sectioned list, the sections would look like this:
 
+```
 - 3 items
 - 5 items
 - 10 items
 - 10 items
 - 6 items
+```
 
 #### Empty sections
 
@@ -46,6 +48,7 @@ Why would you do this? Perhaps you're using your sectioned list to display the i
 
 So if you specify `[3, 5, 0, 10, 0, 20]` for your section sizes and use the empty sections to show advertisements, the web page would look something like this with 55 items:
 
+```
 - 3 items
 - 5 items
 - An advertisement
@@ -53,6 +56,7 @@ So if you specify `[3, 5, 0, 10, 0, 20]` for your section sizes and use the empt
 - Another advertisement
 - 20 items
 - 17 items
+```
 
 Note that if your last section size is empty, any subsequent sections will default to a max size of 10.
 
