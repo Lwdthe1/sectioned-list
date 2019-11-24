@@ -12,6 +12,9 @@ Add to the list and items flow into sections.
 
 `npm install --save sectioned-list`
 
+![Sectioned-List Github Social Media Image](https://user-images.githubusercontent.com/5778798/69490311-9e99e800-0e3a-11ea-9d0d-78e5ff806007.png)
+
+
 # Usage
 
 - `new constructor(config)` Create a new instance with a config object.
