@@ -28,7 +28,9 @@ Add to the list and items flow into sections.
 
 - `addSectionSize` Add a section size specification to the list. There is no way to remove a section size specification.
 
-There may be other public fields you can access, but they are not necessary, so we've omitted them here. See the tests (`tests/sectionedList_test.js`) to see how these methods are used.
+There may be other public fields you can access, but they are not necessary, so we've omitted them here.
+
+See the tests (`tests/sectionedList_test.js`) to see how these methods are used.
 
 ## config object
 
