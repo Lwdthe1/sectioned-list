@@ -6,20 +6,35 @@ const SectionedList = require("../index");
 const testHelper = require("./TestHelper").instance();
 
 describe("constructor", () => {
-  it("should construct a new sectional array with provided section defintions", () => {
-    const defs = [3, 10, 10, 5, 5, 10];
-    const sectional = new SectionedList({ sectionSizes: defs });
+  it("should construct a new sectional array with provided section specs", () => {
+    const specs = [3, 10, 10, 5, 5, 10];
+    const sectional = new SectionedList({ sectionSizes: specs });
     assert.deepEqual(sectional.sections, []);
-    assert.deepEqual(sectional.defs, defs);
+    assert.deepEqual(sectional._specs, specs);
 
-    // Should have copied the defs array into another array
-    assert.isFalse(sectional.defs === defs);
+    // Should have copied the specs array into another array
+    assert.isFalse(sectional._specs === specs);
   });
 
   it("should construct a new sectional array with default props", () => {
     const sectional = new SectionedList();
     assert.deepEqual(sectional.sections, []);
-    assert.deepEqual(sectional.defs, [10]);
+    assert.deepEqual(sectional._specs, [10]);
+  });
+});
+
+describe("#addSectionSize()", () => {
+  it("should add the provided section size to the list of section sizes", () => {
+    const specs = [3, 10, 10, 5, 5, 10];
+    const sectional = new SectionedList({ sectionSizes: specs });
+
+    assert.deepEqual(sectional._specs, specs);
+
+    const newSectionSize = 69;
+    sectional.addSectionSize(newSectionSize);
+
+    assert.notDeepEqual(sectional._specs, specs);
+    assert.equal(sectional.lastSectionSpec, newSectionSize);
   });
 });
 
@@ -35,7 +50,7 @@ describe("#addItem()", () => {
 });
 
 describe("#addItems()", () => {
-  it("should add items into sections in order when using default section defs", () => {
+  it("should add items into sections in order when using default section specs", () => {
     const sectional = new SectionedList();
 
     const items = [...Array(23).keys()];
@@ -48,7 +63,7 @@ describe("#addItems()", () => {
     ]);
   });
 
-  it("should add items into sections in order when using custom section defs and ensure sections are well formed.", () => {
+  it("should add items into sections in order when using custom section specs and ensure sections are well formed.", () => {
     const sectionSizes = [3, 5, 10, 20];
     const sectional = new SectionedList({ sectionSizes });
 
@@ -139,7 +154,7 @@ describe("#addItems()", () => {
     );
   });
 
-  it("should add items into sections in order when using custom section defs with 2 empty defs and empty as last", () => {
+  it("should add items into sections in order when using custom section specs with 2 empty specs and empty as last", () => {
     const sectionSizes = [3, 5, 0, 15, 0];
     const sectional = new SectionedList({ sectionSizes });
 
@@ -166,7 +181,7 @@ describe("#addItems()", () => {
         "0 / 0",
         "15 / 15",
         "0 / 0",
-        // After the last def, which is empty, should default following defs to 10
+        // After the last spec, which is empty, should default following specs to 10
         "10 / 10",
         "10 / 10",
         "10 / 10",
@@ -175,7 +190,7 @@ describe("#addItems()", () => {
     );
   });
 
-  it("should add items into sections in order when using custom section defs with 2 empty defs", () => {
+  it("should add items into sections in order when using custom section specs with 2 empty specs", () => {
     const sectionSizes = [3, 5, 0, 15, 0, 21];
     const sectional = new SectionedList({ sectionSizes });
 
