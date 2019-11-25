@@ -1,9 +1,6 @@
 A list of arrays with predefined max lengths. Add to the list and items flow into sections.
 
-- [Install](#install) & [Usage](#usage)
-- [Tests](#tests) & [Contributing](#contributing)
-
-# Install
+[Usage](#usage), [Tests](#tests) & [Contributing](#contributing)
 
 `npm install --save sectioned-list`
 
