@@ -1,18 +1,13 @@
-A list of arrays with predefined max lengths.
+A list of arrays with predefined max lengths. Add to the list and items flow into sections.
 
-Add to the list and items flow into sections.
-
-- [Install](#install)
-- [Usage](#usage)
-- [Example](#example)
-- [Tests](#tests)
-- [Contributing](#contributing)
+- [Install](#install) & [Usage](#usage)
+- [Tests](#tests) & [Contributing](#contributing)
 
 # Install
 
 `npm install --save sectioned-list`
 
-![Sectioned-List Github Social Media Image](https://user-images.githubusercontent.com/5778798/69490311-9e99e800-0e3a-11ea-9d0d-78e5ff806007.png)
+![sectioned-list](https://user-images.githubusercontent.com/5778798/69504226-b83c3d80-0ed5-11ea-96d9-b9e7567bb16e.gif)
 
 # Usage
 
@@ -79,3 +74,5 @@ We use mocha and chai. Run `npm test`
 ## Contributing
 
 Feel free to open a pull request!
+
+Created by [Lincoln W Daniel](http://www.LincolnWDaniel.com).
