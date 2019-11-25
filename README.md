@@ -1,9 +1,6 @@
 A list of arrays with predefined max lengths. Add to the list and items flow into sections.
 
-- [Install](#install) & [Usage](#usage)
-- [Tests](#tests) & [Contributing](#contributing)
-
-# Install
+[Usage](#usage), [Tests](#tests) & [Contributing](#contributing)
 
 `npm install --save sectioned-list`
 
@@ -17,7 +14,7 @@ A list of arrays with predefined max lengths. Add to the list and items flow int
 
 - `addItems(Array<any>)` Adds the items to the list by calling `addItem()` for each item in order.
 
-- `sections` Get all sections in the list. A section's items can be accessed via its `items` field.
+- `sections` Get all sections in the list. A section's items can be accessed via its `items` field. You can also access a section's `index` in the list and `size`, the number of fields it has, fields.
 
 - `sectionedItems` Get an array of the items in the list in their section arrays. The returned value looks like this: `Array<Array<any>>`
 
